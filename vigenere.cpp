@@ -14,16 +14,35 @@ vigenere::vigenere(){
 }
 
 void vigenere::creer_cle(){
+	int choix;
+	cout << "1. Clé numérique" << endl;
+	cout << "2. Clé alphabetique" << endl;
+	cin >> choix;
+	cout << endl<< endl<< endl<< endl<< endl;
 	int i = 1;
-	while(i!=0){
-		int nbr;
-		cout << "Entrer la clé (en nombre) 0 pour finir " << endl;
-		cin >> nbr;
+	if (choix == 1){
+		while(i!=0){
+			int nbr;
+			cout << "Entrer la clé (en nombre) 0 pour finir " << endl;
+			cin >> nbr;
 
-		if(nbr!=0){
-			cle.push_back(nbr);
+			if(nbr!=0){
+				cle.push_back(nbr);
+			}
+			else{i=0;}
 		}
-		else{i=0;}
+	}
+	else if (choix == 2){
+		while(i!=0){
+			char nbr;
+			cout << "Entrer la clé (en lettre minuscule) 0 pour finir " << endl;
+			cin >> nbr;
+
+			if(nbr!='0'){
+				cle.push_back(int(nbr)-96);
+			}
+			else{i=0;}
+		}
 	}
 }
 
@@ -53,3 +72,4 @@ void vigenere::decode(){
 		write(false, "code.txt");
 	}
 }
+
