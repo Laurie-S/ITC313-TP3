@@ -9,6 +9,13 @@ using namespace std;
 
 int main(){
 	vigenere vin;
-
-	vin.encode();
+	int choix;
+	cout << "voulez vous coder (1) ou decoder (2) un message ? ";
+	cin >> choix;
+	if (choix == 1){
+		vin.encode();
+	}
+	else {
+		vin.decode();
+	}
 }

@@ -36,5 +36,20 @@ void vigenere::encode(){
 			}
 		write(true, "decode.txt");
 	}
+}
 
+void vigenere::decode(){
+	bool lect = read(true, "decode.txt");
+	if(lect){
+		for(int i =0; i< m_plain.size(); i++){
+			char x = m_plain.at(i);
+			if(((int(x)-cle.at(i%cle.size()))%128)<0){
+				m_plain+=char (128-(int(x)-cle.at(i%cle.size()))%128);
+			}
+			else{
+				m_cipher+=char ((int(x)-cle.at(i%cle.size()))%128);
+			}
+		}
+		write(false, "code.txt");
+	}
 }

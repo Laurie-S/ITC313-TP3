@@ -12,6 +12,7 @@ public:
 	vigenere();
 	void creer_cle();
 	void encode();
+	void decode();
 
 private:
 	vector<int> cle;
