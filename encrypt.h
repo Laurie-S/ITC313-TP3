@@ -1,4 +1,4 @@
-#ifndef __encrypt
+#ifndef _encrypt_h
 #define _encrypt_h
 #include <iostream>
 #include <string>
